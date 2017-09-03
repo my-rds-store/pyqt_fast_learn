@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = docs
+SPHINXPROJ    = pyqt_fast_learn
 SOURCEDIR     = source
 BUILDDIR      = build
 

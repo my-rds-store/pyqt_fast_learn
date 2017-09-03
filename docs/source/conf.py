@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Qt Creator 快速入门 documentation build configuration file, created by
-# sphinx-quickstart on Thu Jul 20 11:22:49 2017.
+# pyqt_fast_learn documentation build configuration file, created by
+# sphinx-quickstart on Sun Sep  3 23:48:37 2017.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -45,9 +45,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Qt Creator 快速入门'
-copyright = u'2017, admin'
-author = u'admin'
+project = u'pyqt_fast_learn'
+copyright = u'2017, jxm'
+author = u'jxm'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -63,7 +63,7 @@ release = u'1.0.0'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = "zh_CN"
+language = 'zh_CN'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -82,7 +82,9 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+#html_theme = 'alabaster'
 html_theme = 'sphinx_rtd_theme'
+
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -99,7 +101,7 @@ html_static_path = ['']
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'QtCreatordoc'
+htmlhelp_basename = 'pyqt_fast_learndoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -126,8 +128,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'QtCreator.tex', u'Qt Creator 快速入门 Documentation',
-     u'admin', 'manual'),
+    (master_doc, 'pyqt_fast_learn.tex', u'pyqt\\_fast\\_learn Documentation',
+     u'jxm', 'manual'),
 ]
 
 
@@ -136,7 +138,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'qtcreator', u'Qt Creator 快速入门 Documentation',
+    (master_doc, 'pyqt_fast_learn', u'pyqt_fast_learn Documentation',
      [author], 1)
 ]
 
@@ -147,8 +149,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'QtCreator', u'Qt Creator 快速入门 Documentation',
-     author, 'QtCreator', 'One line description of project.',
+    (master_doc, 'pyqt_fast_learn', u'pyqt_fast_learn Documentation',
+     author, 'pyqt_fast_learn', 'One line description of project.',
      'Miscellaneous'),
 ]
 

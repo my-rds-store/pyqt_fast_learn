@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=source
 set BUILDDIR=build
-set SPHINXPROJ=QtCreator
+set SPHINXPROJ=pyqt_fast_learn
 
 if "%1" == "" goto help
 
