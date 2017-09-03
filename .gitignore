@@ -1,0 +1,7 @@
+*.o
+*.user
+.*.swp
+*.db
+
+.idea
+*.pyc

@@ -1,0 +1,8 @@
+/*
+!.gitignore
+!connection.h
+!main.cpp
+!mainwindow.cpp
+!mainwindow.h
+!mainwindow.ui
+!sqlModel.pro
