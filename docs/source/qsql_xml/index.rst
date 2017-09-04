@@ -6,6 +6,13 @@
 =============
 
 
+.. code-block:: bash
+
+    $ sudo apt-get install python-qt4-sql
+
+    $ sudo apt-get install libqt4-sql-sqlite libqt4-sql-mysql
+
+
 17.1.1 连接到数据库
 ----------------------
 
@@ -113,60 +120,53 @@ QSqlQueryModel、QSqlTableModel、QSqlRelationalTableModel。
 
 QSqlQueryModel 提供了一个基于SQL查询的制度模型。
 
-**sqlModel.pro**
 
-    添加一行代码:
-    QT += sql
+.. image:: ../images/17-1.png
+    :scale: 100%
+    :alt: alternate text
+    :align: center
 
-.. literalinclude:: ../../../src/17/17-6/sqlModel/sqlModel.pro
-    :language: cpp
+
+.. literalinclude:: ../../../src/17/17-6/sqlModel/connection.py
+    :language: python
     :encoding: utf-8
 
-**connection.h**
 
-.. literalinclude:: ../../../src/17/17-6/sqlModel/connection.h
-    :language: cpp
+.. literalinclude:: ../../../src/17/17-6/sqlModel/mainwindow.py
+    :language: python
     :encoding: utf-8
 
-**mainwindow.h**
 
-.. literalinclude:: ../../../src/17/17-6/sqlModel/mainwindow.h
-    :language: cpp
-    :encoding: utf-8
+　先创建了，QSqlQueryModel对象，然后使用setQuery()来执行SQL语句进行查询整张student表，
+并使用setHeaderDate()来设置显示的表头。
 
-**mainwindow.cpp**
+后面创建了视图，并将QSqlQueryModel对象作为其要显示的的模型。
+运行程序，效果上图所示。
 
-    .. literalinclude:: ../../../src/17/17-6/sqlModel/mainwindow.cpp
-        :language: cpp
-        :encoding: utf-8
+这里要注意，其实QSqlQueryModel中存储的是执行完setQuery()函数后的结果集，
+所以视图中显示的是结果集的内容。
 
-::
+QSqlQueryModel中还提供了: 
 
-    这里先创建了，QSqlQueryModel对象，然后使用setQuery()来执行SQL语句进行查询整张student表，
-    并使用setHeaderDate()来设置显示的表头。
-    后面创建了视图，并将QSqlQueryModel对象作为其要显示的的模型。
-    运行程序，效果如图(17-1)所示。
-    这里要注意，其实QSqlQueryModel中存储的是执行完setQuery()函数后的结果集，
-    所以视图中显示的是结果集的内容。
+* columnCount() 返回一条记录中字段的个数;
+* rowCount() 返回结果集中记录的条数;
+* record() 返回第n条记录;index()返回制定记录的指定字段的索引;
+* clear() 可以清空模型中的结果集。
+* query()函数,获取QSqlQuery对象，
 
-    QSqlQueryModel中还提供了 columnCount()返回一条记录中字段的个数;
-    rowCount()返回结果集中记录的条数;
-    record()返回第n条记录;index()返回制定记录的指定字段的索引;
-    clear()可以清空模型中的结果集。
-    也可以使用它提供的query()函数来获取QSqlQuery对象，
-    这样就可以使用上一节讲到的QSqlQuery的相关内容来操作数据库了.
+有query()函数,可以使用上一节讲到的QSqlQuery的相关内容来操作数据库了.
 
-    还要注意一点，就是又使用setQuery()如果又使用setQuery()进行了新的查询，
-    比如进行了插入操作，这时要想视图中可以显示操作后的结果，那么就必须再次查询整张表，
-    也就是要同时执行下面两行代码:
-    
-        model->setQuery(QString("insert into student values(5,'薛静',10)"));
-        model->setQuery("select * from student");
+还要注意一点，就是又使用setQuery()如果又使用setQuery()进行了新的查询，
+比如进行了插入操作，这时要想视图中可以显示操作后的结果，那么就必须再次查询整张表，
+也就是要同时执行下面两行代码:
 
-**main.cpp**
+    .. code-block:: python
 
-.. literalinclude:: ../../../src/17/17-6/sqlModel/main.cpp
-    :language: cpp
+        self.model.setQuery(QString("insert into student values(5,'薛静',10)"))
+        self.model.setQuery("select * from student")
+
+.. literalinclude:: ../../../src/17/17-6/sqlModel/main.py
+    :language: python
     :encoding: utf-8
 
 
@@ -181,6 +181,12 @@ QSqlQueryModel 提供了一个基于SQL查询的制度模型。
         view.setEditTriggers(QAbstractItemView.NoEditTriggers)
     
 
+
+.. image:: ../images/17-2.png
+    :scale: 100%
+    :alt: alternate text
+    :align: center
+
 .. literalinclude:: ../../../src/17/17-7/sqlModel/connection.py
     :language: python
     :encoding: utf-8
@@ -188,16 +194,16 @@ QSqlQueryModel 提供了一个基于SQL查询的制度模型。
 .. literalinclude:: ../../../src/17/17-7/sqlModel/mainwindow.py
     :language: python
     :encoding: utf-8
+    :emphasize-lines: 19
 
-::
 
-    使用setTable()来指定数据库表，然后使用select()函数进行查询，
-    调用这两个函数就等价于: "select * from student;" 这条SQL语句。
-    这里还可以使用 setFilter()来制定查询时的条件，在后面会看到这个函数的使用。
-    在使用该模型以前，一般还要设置其编辑策略，
-    它由QSqlTableModel::EditStrategy枚举变量定义，一共三个值,如表17-4所列。
-    用来说明当数据库中的值被编辑后，什么情况下被提交修改.
+　使用setTable()来指定数据库表，然后使用select()函数进行查询，
+调用这两个函数就等价于: "select * from student;" 这条SQL语句。
 
+这里还可以使用 setFilter()来制定查询时的条件，在后面会看到这个函数的使用。
+在使用该模型以前，一般还要设置其编辑策略， 
+它由QSqlTableModel::EditStrategy枚举变量定义，一共三个值,如表17-4所列。
+用来说明当数据库中的值被编辑后，什么情况下被提交修改.
 
 +-------------------------------+-----------------------------------------------------------------------+
 | Constant	              	| Description                                                           |
@@ -208,12 +214,13 @@ QSqlQueryModel 提供了一个基于SQL查询的制度模型。
 +-------------------------------+-----------------------------------------------------------------------+
 | QSqlTableModel.OnManualSubmit | 所有的改变都会在模型中进行缓存，直到调用submitAll()或者revertAll()函数|
 +-------------------------------+-----------------------------------------------------------------------+
-
+ 
 
 
 .. literalinclude:: ../../../src/17/17-7/sqlModel/main.py
     :language: python
     :encoding: utf-8
+
 
 3. SQL关系表格模型
 ^^^^^^^^^^^^^^^^^^^^
