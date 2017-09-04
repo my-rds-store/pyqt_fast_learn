@@ -178,19 +178,15 @@ QSqlQueryModel 提供了一个基于SQL查询的制度模型。
     
     .. code-block:: cpp
         
-        view->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        view.setEditTriggers(QAbstractItemView.NoEditTriggers)
     
 
-.. literalinclude:: ../../../src/17/17-7/sqlModel/connection.h
-    :language: cpp
+.. literalinclude:: ../../../src/17/17-7/sqlModel/connection.py
+    :language: python
     :encoding: utf-8
 
-.. literalinclude:: ../../../src/17/17-7/sqlModel/mainwindow.h
-    :language: cpp
-    :encoding: utf-8
-
-.. literalinclude:: ../../../src/17/17-7/sqlModel/mainwindow.cpp
-    :language: cpp
+.. literalinclude:: ../../../src/17/17-7/sqlModel/mainwindow.py
+    :language: python
     :encoding: utf-8
 
 ::
@@ -215,8 +211,8 @@ QSqlQueryModel 提供了一个基于SQL查询的制度模型。
 
 
 
-.. literalinclude:: ../../../src/17/17-7/sqlModel/main.cpp
-    :language: cpp
+.. literalinclude:: ../../../src/17/17-7/sqlModel/main.py
+    :language: python
     :encoding: utf-8
 
 3. SQL关系表格模型
