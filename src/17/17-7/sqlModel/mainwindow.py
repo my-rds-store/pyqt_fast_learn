@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 #coding=utf-8
 
+'''
+FileName : mainwindow.py
+'''
+
 from PyQt4.QtCore import QString,Qt,pyqtSlot
 from PyQt4.QtGui import QMainWindow
 from PyQt4.QtGui import QMessageBox

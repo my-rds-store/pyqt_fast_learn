@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 #coding=utf-8
-import sys
 
+'''
+FileName : main.py
+'''
+
+import sys
 from PyQt4.QtCore import QTextCodec
 from PyQt4.QtGui import QApplication
 
@@ -12,7 +16,7 @@ if __name__ == "__main__":
 
     app = QApplication (sys.argv)
 
-    #/* 这行代码要写在创建连接之前, 不然，数据库中文乱码*/
+    # 这行代码要写在创建连接之前, 不然，数据库中文乱码
     QTextCodec.setCodecForTr(QTextCodec.codecForName("UTF-8"))
     QTextCodec.setCodecForCStrings(QTextCodec.codecForName("UTF-8"))
 

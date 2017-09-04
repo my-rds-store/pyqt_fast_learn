@@ -5,7 +5,7 @@ from PyQt4.QtGui import QMessageBox
 from PyQt4.QtSql import QSqlDatabase,QSqlQuery
 
 '''
-sudo apt-get install python-qt4-sql
+FileName : connection.py
 '''
 
 def createConnection():
