@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 #coding=utf-8
+
+'''
+FileName : mainwindow.py
+'''
+
 from PyQt4.QtGui import QMainWindow,QTableView
 from PyQt4.QtCore import Qt
 from PyQt4.QtSql import QSqlQueryModel

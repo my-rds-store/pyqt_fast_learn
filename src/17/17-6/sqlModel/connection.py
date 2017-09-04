@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 #coding=utf-8
 
+'''
+FileName : connection.py
+'''
+
 from PyQt4.QtCore import QString
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtSql import QSqlDatabase, QSqlQuery

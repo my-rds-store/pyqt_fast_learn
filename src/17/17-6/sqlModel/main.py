@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 #coding=utf-8
 
+'''
+FileName : main.py
+'''
+
 from PyQt4.QtCore import QTextCodec
 from PyQt4.QtGui import QApplication
 import sys
