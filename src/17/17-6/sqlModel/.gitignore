@@ -1,8 +1,6 @@
 /*
 !.gitignore
-!connection.h
-!main.cpp
-!mainwindow.cpp
-!mainwindow.h
+!connection.py
+!main.py
+!mainwindow.py
 !mainwindow.ui
-!sqlModel.pro
