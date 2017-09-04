@@ -4,13 +4,13 @@
 from PyQt4.QtGui import QMainWindow,QTableView
 from PyQt4.QtSql import QSqlRelationalTableModel, QSqlRelation, \
                         QSqlRelationalDelegate
-
-# from PyQt4 import uic
+'''
+FileName : mainwindow.py
+'''
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__(None)
-        # uic.loadUi("mainwindow.ui", self)
 
         model = QSqlRelationalTableModel(self)
 

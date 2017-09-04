@@ -3,7 +3,7 @@
 
 
 '''
- sudo apt-get install python-qt4-sql
+FileName : main.py
 '''
 
 import sys
