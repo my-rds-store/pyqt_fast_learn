@@ -5,6 +5,7 @@
 17.1 数据库
 =============
 
+`qt使用 qsqltablemodel 模型操作数据库 <http://blog.csdn.net/frank3543/article/details/49722625>`_
 
 .. code-block:: bash
 
